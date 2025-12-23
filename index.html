@@ -161,7 +161,7 @@
         <!-- <h2 class="title is-3">Abstract</h2> -->
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+LLMs have shown the capacity to improve their performance on reasoning tasks through reflecting on their mistakes, and acting with these reflections in mind. However, continual reflections of the same LLM onto itself exhibit degeneration of thought, where the LLM continues to repeat the same errors again and again even with the knowledge that its wrong. To address this problem, we instead use multi-agen multi-persona debate between LLMs to generate the reflections. With this framework, we demonstrate increased performance over the baseline Reflexion in both question-answering and programming domains, most notably achieving a pass@1 accuracy of 82.6 on the HumanEval dataset with GPT 3.5, a higher accuracy than what GPT 4 achieves!
           </p>
         </div>
       </div>
@@ -177,30 +177,30 @@
       <div id="results-carousel" class="carousel results-carousel">
       <div class="item">
         <!-- Your image here -->
-        <img src="static/assets/images/reflexion3.png" alt="Figure 1"/>
+        <img src="static/assets/images/MAR1.png" alt="Figure 1"/>
         <h2 class="subtitle has-text-centered">
-         As we can see, the MAR framework both outperforms the reflexion framework as well as the baseline gpt3.5 on question answering (HotPotQA) and programming (HumanEval).
+          Under the traditional Reflexion framework, the agent uses a single LLM instance to reflect on its mistakes, and then uses these reflections as it attempts the task again. Under our proposed MAR framework, a multi-agent debate is initiated to generate the reflection, with the judge LLM selecting the verdict. 
        </h2>
      </div>
      <div class="item">
       <!-- Your image here -->
-      <img src="static/assets/images/reflexion4.png" alt="Figure 2"/>
+      <img src="static/assets/images/MAR2.png" alt="Figure 2"/>
       <h2 class="subtitle has-text-centered">
-        MAR reflexion leads to consistent improvements in HotPotQA question-aswering, eventually outperforming the original Reflexion framework.
+        Here we can see an example trial under the MAR framework, where each of the different personas generate a possible reason for failure, which the judge LLM then converts into a verdict that the LLM uses for self-reflecion. 
       </h2>
     </div>
     <div class="item">
         <!-- Your image here -->
-        <img src="static/assets/images/reflexion1.png" alt="Figure 3"/>
+        <img src="static/assets/images/MAR3.png" alt="Figure 3"/>
         <h2 class="subtitle has-text-centered">
-          Pictured above is the original reflexion framework, where an agent acts within the environment, reflects on its mistakes, and adds these reflections to its memory buffer.
+         As we can see, the MAR framework both outperforms the reflexion framework as well as the baseline gpt3.5 on question answering (HotPotQA) and programming (HumanEval).
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/assets/images/reflexion2.png" alt="figure 4"/>
+        <img src="static/assets/images/MAR4.png" alt="figure 4"/>
         <h2 class="subtitle has-text-centered">
-          Pictured above is our enhanced MAR framework, where a multi-agent debate is initiated to generate the reflection, rather than having a single LM do it. 
+        MAR reflexion leads to consistent improvements in HotPotQA question-aswering, eventually outperforming the original Reflexion framework.
         </h2>
       </div>
   </div>
